@@ -958,9 +958,9 @@ pytest tests/integration/ -v -m "integration and not slow"
 |------|------|------|
 | Milvus | 19530 | 向量数据库 |
 | Embedding API | 8001 | 文本向量化 |
-| Rerank API | 8002 | 重排序（可选） |
+| Rerank API | 8002 | 重排序 |
 | LLM (Ollama) | 11434 | 大语言模型 |
-| MinerU | 8003 | 文档解析（可选） |
+| MinerU | 8003 | 文档解析 |
 
 > 未启动的服务会自动跳过相关测试，不影响其他测试执行。
 
