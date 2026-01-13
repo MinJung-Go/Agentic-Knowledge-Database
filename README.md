@@ -60,7 +60,7 @@ RAG（Retrieval-Augmented Generation）通过检索增强的方式，让 LLM 基
 ### 2.2 自部署技术选型
 
 | 组件 | 选型 | 部署命令 |
-|------|------|------|----------|
+|------|------|----------|
 | 文档解析 | MinerU | `docker run mineru-api` |
 | LLM + Vision | vLLM + Qwen3-VL-8B | `vllm serve Qwen/Qwen3-VL-8B` |
 | Embedding | Qwen3-Embedding-0.6B | `vllm serve Qwen/Qwen3-Embedding-0.6B --task embed` |
