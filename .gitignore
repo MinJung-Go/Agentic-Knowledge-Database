@@ -205,3 +205,34 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# AI Tools & Assistants
+.claude/
+.aider*
+.continue/
+.copilot/
+.codeium/
+.tabnine/
+.deepeval/
+
+# IDE Settings (uncommented for cleaner repo)
+.idea/
+.vscode/
+*.code-workspace
+
+# Cursor Editor
+.cursor/
+
+# Local development
+*.local
+.env.local
+.env.*.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Project specific
+data/
+logs/
+*.db
