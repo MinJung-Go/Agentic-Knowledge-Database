@@ -1092,3 +1092,9 @@ gradio app/demo.py
 ```python
 API_BASE_URL = "http://localhost:8000"  # 改为实际 API 地址
 ```
+
+---
+
+## 许可证
+
+本项目采用 [MIT License](LICENSE) 开源，版权所有 © 2026 MinJung-Go。
