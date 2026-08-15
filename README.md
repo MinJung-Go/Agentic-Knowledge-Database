@@ -1,8 +1,19 @@
 # Agentic-Knowledge-Database
 
-> **AI 应用开发实战** — 课程一：手把手教你打造企业知识库
+<div align="center">
+
+**AI 应用开发实战 — 课程一：手把手教你打造企业知识库**
 
 从零构建企业级 AI 知识库系统，覆盖完整生命周期：需求分析 → 架构设计 → 开发实现 → 部署上线。
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-App-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/MinJung-Go/Agentic-Knowledge-Database/issues)
+
+[模块一：项目规划与需求分析](#模块一项目规划与需求分析) • [模块二：技术选型与架构设计](#模块二技术选型与架构设计) • [模块三：开发流程](#模块三开发流程)
+
+</div>
 
 ---
 
