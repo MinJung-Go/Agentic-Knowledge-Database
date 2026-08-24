@@ -1,15 +1,15 @@
-# Agentic-Knowledge-Database
-
 <div align="center">
 
-**AI 应用开发实战 — 课程一：手把手教你打造企业知识库**
-
-从零构建企业级 AI 知识库系统，覆盖完整生命周期：需求分析 → 架构设计 → 开发实现 → 部署上线。
+<h1>Agentic-Knowledge-Database</h1>
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-App-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/MinJung-Go/Agentic-Knowledge-Database/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+**AI 应用开发实战 — 课程一：手把手教你打造企业知识库**
+
+从零构建企业级 AI 知识库系统，覆盖需求分析、架构设计、开发实现和部署上线。
 
 [模块一：项目规划与需求分析](#模块一项目规划与需求分析) • [模块二：技术选型与架构设计](#模块二技术选型与架构设计) • [模块三：开发流程](#模块三开发流程)
 
@@ -40,9 +40,9 @@
 - 支持的交互方式：API 接口
 - 支持的语言：中文为主
 
-**非功能需求：**
-- 响应时间 < 3s
-- 支持并发用户数 > 100
+**非功能设计目标（需在目标部署环境中通过基准测试验证）：**
+- 目标响应时间 < 3s
+- 目标并发用户数 > 100
 - 数据完全私有化部署
 
 ### 1.3 数据源梳理
@@ -89,10 +89,10 @@ RAG（Retrieval-Augmented Generation）通过检索增强的方式，让 LLM 基
 | **LocalAI** | OpenAI API 替代方案 | 支持文本/图像/语音/向量，内置向量存储 | 需要完整 OpenAI 兼容栈 |
 
 **为什么选择 vLLM：**
-- **PagedAttention 技术**：创新的内存管理机制，显著提升推理效率
-- **高并发能力**：基准测试显示吞吐量比标准 HuggingFace Transformers 高 24x
+- **PagedAttention 技术**：通过分页式 KV Cache 管理改善服务端内存利用率；实际吞吐量取决于模型、硬件和请求负载
+- **批处理与并发服务**：支持连续批处理等服务端优化；实际吞吐量应在目标模型与硬件上测试
 - **硬件灵活性**：支持 NVIDIA/AMD GPU、Intel CPU、TPU 等多种硬件
-- **OpenAI 兼容 API**：无缝迁移云服务到本地部署
+- **OpenAI 兼容 API**：降低兼容客户端迁移到本地服务的接口改造成本
 
 > 💡 **推荐策略**：开发阶段使用 Ollama 快速迭代，生产部署切换到 vLLM 或 SGLang
 
@@ -346,7 +346,7 @@ EOF
 }
 ```
 
-> 🔒 **安全说明**：所有检索操作强制包含 `userId` 过滤，确保用户数据隔离。删除/更新操作会验证文档归属权限。
+> 🔒 **隔离设计**：检索操作在应用层加入 `userId` 过滤，删除和更新操作验证文档归属。生产部署仍需配套身份认证、授权校验、隔离测试和存储层访问控制。
 
 ### 2.5 项目核心目录结构
 
@@ -1092,6 +1092,12 @@ gradio app/demo.py
 ```python
 API_BASE_URL = "http://localhost:8000"  # 改为实际 API 地址
 ```
+
+---
+
+## 贡献
+
+欢迎报告问题和提交改进。开始前请阅读 [贡献指南](CONTRIBUTING.md)，并根据改动范围运行单元测试或依赖外部服务的集成测试。
 
 ---
 
